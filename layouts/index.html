@@ -2,10 +2,19 @@
 
 <div class="header">
   <h1>{{ .Title }}</h1>
-  <h2>{{ .Site.Params.subtitle }}</h2>
 </div>
 
 <div class="content">
+  <h1>{{ "Getting Started" }}</h1>
+  <ul>
+    <li><a href="https://gohugo.io/1" target="_blank">Logging in to the CCC</a></li>
+    <li><a href="http://hlt.watson.ibm.com/doc/spjb-guide.html#sec:interactive" target="_blank">Running an interactive job</a></li>
+    <li><a href="http://hlt.watson.ibm.com/doc/spjb-guide.html#sec:submit" target="_blank">Submiting an LSF job</a></li>
+  </ul>
+</div>
+
+<div class="content">
+  <h2>{{ .Site.Params.subtitle }}</h2>
   {{ range ( .Paginate (where .Data.Pages "Type" "post")).Pages }}
     {{ .Render "summary"}}
   {{ end }}
